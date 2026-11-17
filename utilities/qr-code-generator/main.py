@@ -25,8 +25,9 @@ else:
     if file_name == '':
         file_name = 'document.png'
 
-    else:
+    elif not file_name.lower().endswith('.png'):
         file_name = f'{file_name}.png'
+
 
     qrcode_image.save(file_name)
 
