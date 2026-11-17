@@ -1,4 +1,4 @@
-# pip install "qrcode[pil]" 
+# pip install "qrcode[pil]"
 # Documentação para consulta: https://pypi.org/project/qrcode/
 
 import qrcode
@@ -9,9 +9,12 @@ print('=== QR Code Generator ===')
 text = input('Digite um texto ou URL: ').strip()
 print(f'Conteúdo informado: {text}')
 
+file_name = input('Digite o nome que deseja no arquivo ou enter para nome padrão: ').strip()
+
 
 if text == '':
     print('Por favor, digite um texto ou URL')
+
 else:
     print('Gerando QRCode')
     time.sleep(1)
@@ -19,9 +22,14 @@ else:
     qrcode_image = qrcode.make(text)
     # print(type(qrcode_image))
 
-    file = 'qrcode.png'
-    qrcode_image.save(file)
+    if file_name == '':
+        file_name = 'document.png'
+
+    else:
+        file_name = f'{file_name}.png'
+
+    qrcode_image.save(file_name)
 
 
     print('QRCode gerado com sucesso!')
-    print(f'Nome do arquivo: {file}')
+    print(f'Nome do arquivo: {file_name}')
