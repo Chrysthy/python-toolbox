@@ -17,6 +17,8 @@ if text == '':
     print('Por favor, digite um texto ou URL')
 
 else:
+    qrcode_color = input('Digite a cor do QR Code: ').lower().strip()
+    qrcode_back_color = input('Digite a cor do fundo do QR Code: ').lower().strip()
     print('Gerando QRCode')
     time.sleep(1)
 
@@ -29,6 +31,17 @@ else:
     elif not file_name.lower().endswith('.png'):
         file_name = f'{file_name}.png'
 
+
+    if qrcode_color == '':
+        qrcode_color = 'black'
+
+
+    if qrcode_back_color == '':
+        qrcode_back_color = 'white'
+      
+
+
+
     code = qrcode.QRCode(
         version=1,
         box_size=10,
@@ -37,7 +50,7 @@ else:
 
     code.add_data(text)
     code.make(fit=True)
-    qrcode_image = code.make_image(fill_color='purple', back_color='black')
+    qrcode_image = code.make_image(fill_color=qrcode_color, back_color=qrcode_back_color)
     qrcode_image.save(file_name)
 
     print('QRCode gerado com sucesso!')
