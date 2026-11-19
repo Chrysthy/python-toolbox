@@ -1,51 +1,93 @@
-# QR Code Generator
+# 📱 QR Code Generator
 
-A customizable Python application that generates QR codes from text or URLs and saves them as PNG images.
+A customizable command-line QR code generator built with Python that converts text and URLs into personalized PNG images.
 
-This project is part of my Python Toolbox, a growing collection of practical projects developed to improve my Python skills through hands-on learning.
+This project is part of **Python Toolbox**, a collection of practical Python projects designed to develop programming skills, explore Python libraries, and apply software development best practices.
 
-## Features
+## 📌 Project Status
 
-- Generate QR codes from text or URLs
-- Validate empty content
-- Customize output filenames
-- Automatically add the PNG extension
-- Choose foreground and background colors
-- Use default colors when no color is provided
-- Automatically adjust QR code capacity
-- Configure module size and border
-- Export QR codes as PNG images
+🚧 Currently in development — Version 1.2
 
-## Technologies
+## ✨ Features
 
-- Python
-- qrcode
-- Pillow
-- time (Python standard library)
+- Generate QR codes from text or URLs.
+- Empty content validation.
+- Custom output filenames.
+- Automatic PNG extension handling.
+- Default filename when no name is provided.
+- Customizable foreground and background colors.
+- Default color settings.
+- Automatic QR code capacity adjustment.
+- Configurable module size and border through code.
+- PNG image export.
+- Interactive command-line interface.
 
-## Installation
+## 🛠️ Technologies
+
+- Python 3
+- `qrcode` — Generates and configures QR codes.
+- `Pillow` — Supports image generation and processing.
+- `time` — Controls execution delays.
+- Git and GitHub — Version control.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3 installed.
+- Required Python dependencies.
+
+### Installation
+
+Navigate to the project directory:
+
+```bash
+cd utilities/qr-code-generator
+```
+
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+### Running the Project
+
+Run the application:
 
 ```bash
 python main.py
 ```
 
-1. Enter a text or URL.
-2. Choose a filename or press Enter to use the default.
-3. Choose a foreground color.
-4. Choose a background color.
-5. The generated QR code will be saved as a PNG image.
+Follow the on-screen instructions to generate and customize your QR code.
 
-Use color names in English, such as purple, blue, green, black, and white.
+## 💻 Usage Example
 
-## Default Settings
+```
+=== QR Code Generator ===
 
-| Setting | Default value |
+Digite um texto ou URL: https://github.com
+Conteúdo informado: https://github.com
+
+Digite o nome que deseja no arquivo ou enter para nome padrão: github
+
+Digite a cor do QR Code: purple
+Digite a cor do fundo do QR Code: white
+
+Gerando QRCode
+QRCode gerado com sucesso!
+Nome do arquivo: github.png
+```
+
+The generated QR code will be saved in the current working directory when a simple filename is provided.
+
+Use valid color names in English or supported hexadecimal color codes.
+
+The current command-line interface is available in Brazilian Portuguese.
+
+## ⚙️ Default Settings
+
+| Setting | Default Value |
 |---|---|
 | Filename | document.png |
 | Foreground color | black |
@@ -53,45 +95,67 @@ Use color names in English, such as purple, blue, green, black, and white.
 | Initial QR code version | 1 |
 | Box size | 10 |
 | Border | 4 |
+| File format | PNG |
 
-## What I Learned
+## 📚 Learning Objectives
 
-- Working with external libraries
-- Reading technical documentation
-- Handling user input
-- String manipulation
-- Conditional statements
-- Independent conditions
-- Variable reassignment
-- F-strings
-- Classes and objects
-- Functions and methods
-- Image generation and customization
-- Testing and debugging
+This project focuses on developing practical knowledge of:
 
-## Roadmap
+- Python standard library modules.
+- External Python libraries and dependencies.
+- Reading technical documentation.
+- Variables and data types.
+- String manipulation.
+- String methods: strip(), lower(), and endswith().
+- User input and output.
+- Conditional statements.
+- Independent conditional statements.
+- Logical operators.
+- Variable reassignment.
+- String formatting with f-strings.
+- Introduction to classes and objects.
+- Functions, methods, and arguments.
+- Image generation and customization.
+- Incremental development.
+- Manual testing and debugging.
+- Version control.
 
-- [x] Basic QR code generation
-- [x] Empty input validation
-- [x] PNG image export
-- [x] Custom filenames
-- [x] File extension validation
-- [x] Custom foreground and background colors
-- [x] Default color settings
-- [ ] Invalid color validation
-- [ ] Error handling
-- [ ] User-defined dimensions and borders
-- [ ] Support for document links
-- [ ] Graphical interface with Tkinter
-- [ ] Modern interface with CustomTkinter
-- [ ] Google Drive integration
-- [ ] Web application with Streamlit
+## 🗺️ Development Roadmap
 
-## Current Version
+- V1.0 — Basic QR code generation.
+- V1.1 — Custom filenames and PNG extension handling.
+- V1.2 — Color customization and default settings.
+- V1.3 — Input validation and error handling.
+- V1.4 — User-defined dimensions and borders.
+- V1.5 — Support for additional content types and document links.
+- V2.0 — Graphical user interface with Tkinter.
+- V2.1 — Modern desktop interface with CustomTkinter.
+- V2.2 — Google Drive integration.
+- V3.0 — Web application with Streamlit.
+- Final documentation and testing.
 
-v1.2 — Implemented and successfully tested in Google Colab.
+## ⚠️ Current Limitations
 
-## Documentation
+- Invalid color names are not yet handled.
+- Color contrast is not automatically validated.
+- Invalid filenames are not yet handled.
+- Existing files may be overwritten.
+- Module size and border cannot yet be customized through user input.
+- Document upload and sharing are not yet supported.
+- No graphical user interface is currently available.
 
-- [qrcode](https://pypi.org/project/qrcode/)
-- [Python](https://docs.python.org/3/)
+These limitations will be addressed in future versions.
+
+## 🧪 Testing
+
+Version 1.2 has been successfully tested.
+
+## 📖 References
+
+- [Python Documentation](https://docs.python.org/3/)
+- [qrcode Documentation](https://pypi.org/project/qrcode/)
+- [Pillow Documentation](https://pillow.readthedocs.io/)
+
+---
+
+Part of the **Python Toolbox** project — learning Python through practical, incremental development.
