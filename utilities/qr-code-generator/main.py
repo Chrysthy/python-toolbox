@@ -9,7 +9,8 @@ print('=== QR Code Generator ===')
 text = input('Digite um texto ou URL: ').strip()
 print(f'Conteúdo informado: {text}')
 
-file_name = input('Digite o nome que deseja no arquivo ou enter para nome padrão: ').strip()
+file_name = input(
+    'Digite o nome que deseja no arquivo ou enter para nome padrão: ').strip()
 
 
 if text == '':
@@ -19,7 +20,7 @@ else:
     print('Gerando QRCode')
     time.sleep(1)
 
-    qrcode_image = qrcode.make(text)
+    # qrcode_image = qrcode.make(text)
     # print(type(qrcode_image))
 
     if file_name == '':
@@ -28,9 +29,16 @@ else:
     elif not file_name.lower().endswith('.png'):
         file_name = f'{file_name}.png'
 
+    code = qrcode.QRCode(
+        version=1,
+        box_size=10,
+        border=4
+    )
 
+    code.add_data(text)
+    code.make(fit=True)
+    qrcode_image = code.make_image(fill_color='purple', back_color='black')
     qrcode_image.save(file_name)
-
 
     print('QRCode gerado com sucesso!')
     print(f'Nome do arquivo: {file_name}')
